@@ -1,0 +1,19 @@
+<% content_for :title, "Photos" %>
+
+<div class="header">
+  <h1>Photos</h1>
+  <%= link_to "Upload photo", new_photo_path, class: "button" %>
+</div>
+
+<% if @photos.any? %>
+  <div class="grid">
+    <% @photos.each do |photo| %>
+      <%= link_to photo, class: "card" do %>
+        <%= image_tag photo.image, alt: photo.title %>
+        <span><%= photo.title %></span>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <p class="empty">No photos yet.</p>
+<% end %>

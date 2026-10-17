@@ -1,0 +1,4 @@
+sunset_image:
+  name: image
+  record: sunset (Photo)
+  blob: sunset_image_blob
