@@ -1,1 +1,2 @@
 sunset_image_blob: <%= ActiveStorage::FixtureSet.blob filename: "photo.png", service_name: "test" %>
+intro_clip_blob: <%= ActiveStorage::FixtureSet.blob filename: "clip.mp4", service_name: "test" %>

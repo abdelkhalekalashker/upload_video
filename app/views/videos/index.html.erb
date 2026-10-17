@@ -1,0 +1,19 @@
+<% content_for :title, "Videos" %>
+
+<div class="header">
+  <h1>Videos</h1>
+  <%= link_to "Upload video", new_video_path, class: "button" %>
+</div>
+
+<% if @videos.any? %>
+  <div class="grid">
+    <% @videos.each do |video| %>
+      <%= link_to video, class: "card" do %>
+        <%= video_tag url_for(video.clip), preload: "metadata", muted: true %>
+        <span><%= video.title %></span>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <p class="empty">No videos yet.</p>
+<% end %>

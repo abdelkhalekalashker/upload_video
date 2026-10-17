@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :photos, only: %i[index show new create destroy]
+  resources :videos, only: %i[index show new create destroy]
 
   get "up" => "rails/health#show", as: :rails_health_check
 
