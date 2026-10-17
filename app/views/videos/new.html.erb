@@ -1,0 +1,21 @@
+<% content_for :title, "Upload video" %>
+
+<h1>Upload video</h1>
+
+<%= form_with model: @video, class: "form" do |form| %>
+  <%= render "shared/errors", record: @video %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :clip, "Video file" %>
+    <%= form.file_field :clip, accept: Video::CONTENT_TYPES.join(",") %>
+  </div>
+
+  <%= form.submit "Upload", class: "button" %>
+<% end %>
+
+<%= link_to "Back to videos", videos_path %>

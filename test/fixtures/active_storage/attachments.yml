@@ -2,3 +2,8 @@ sunset_image:
   name: image
   record: sunset (Photo)
   blob: sunset_image_blob
+
+intro_clip:
+  name: clip
+  record: intro (Video)
+  blob: intro_clip_blob
