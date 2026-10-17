@@ -1,0 +1,15 @@
+<% content_for :title, @photo.title %>
+
+<h1><%= @photo.title %></h1>
+
+<figure class="media">
+  <%= image_tag @photo.image, alt: @photo.title %>
+  <figcaption>
+    <%= @photo.image.filename %> &middot; <%= number_to_human_size(@photo.image.byte_size) %>
+  </figcaption>
+</figure>
+
+<div class="actions">
+  <%= link_to "Back to photos", photos_path %>
+  <%= button_to "Delete", @photo, method: :delete, class: "button danger", form: { data: { turbo_confirm: "Delete this photo?" } } %>
+</div>

@@ -1,0 +1,21 @@
+<% content_for :title, "Upload photo" %>
+
+<h1>Upload photo</h1>
+
+<%= form_with model: @photo, class: "form" do |form| %>
+  <%= render "shared/errors", record: @photo %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: Photo::CONTENT_TYPES.join(",") %>
+  </div>
+
+  <%= form.submit "Upload", class: "button" %>
+<% end %>
+
+<%= link_to "Back to photos", photos_path %>

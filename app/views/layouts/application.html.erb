@@ -24,6 +24,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="nav">
+      <%= link_to "Photos", photos_path %>
+    </nav>
+
+    <main class="container">
+      <% flash.each do |type, message| %>
+        <p class="flash flash-<%= type %>"><%= message %></p>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
